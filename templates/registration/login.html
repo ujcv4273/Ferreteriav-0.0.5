@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Login</title>
+	<style>
+
+		.contenedor{
+			margin-top: 100px;
+			margin-left: 500px;
+		}
+
+	</style>
+</head>
+<body style="background-color: rgb(73, 158, 154);">
+
+	<div class="contenedor">
+		<img src="https://i.ibb.co/KjBytn3/KONTROOL-LOGO.png" alt="" style="width: 300px;height: 200px; margin-left: 50px;">
+		<h2  style="margin-left: 100px;", class="titulo">Autenticacion</h2>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<table>
+
+				{{form.as_table}}
+				
+			</table>
+			<a style="margin-left: 150px;", href="{% url 'password_reset' %}">Olvidé mi contraseña</a><br>
+			<br>
+			<input style="margin-left: 180px;" type="submit" value="Ingresar">
+		</form>
+	</div>
+
+	
+</body>
+</html>

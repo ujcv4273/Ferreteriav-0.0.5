@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% block title %}
+FacturaDetalle
+{% endblock %}
+
+{% block contenido %}
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{hidden}}
+    {% endfor %}
+
+    <div class="form-group">
+        <label for="{{ form.Id_Factura_Detalle.id_for_label }}"
+                class="col-sm-2 control-label">{{ form.Id_Factura_Detalle.label }}</label>
+        </div class="col-sm-8">
+            {{ form.Id_Factura_Detalle }}
+        </div>        
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Factura_Encabezado.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Factura_Encabezado}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Producto.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Producto}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Cantidad.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Cantidad}}
+    </div>
+        
+    <div style="margin-top: 40px; ">
+        <button type="submit" style="margin-left: 450px;  background: rgb(36, 210, 253);">Guardar</button>
+    </div> 
+
+</form>
+{% endblock %}  
+

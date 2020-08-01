@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Categorias
+{% endblock %}
+
+{% block contenido %}
+
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{hidden}}
+    {% endfor %}
+
+    <div class="form-group">
+        <label for="{{ form.Id_Categoria.id_for_label }}"
+                class="col-sm-2 control-label">{{ form.Id_Categoria.label }}</label>
+        </div class="col-sm-8">
+            {{ form.Id_Categoria }}
+        </div>        
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Descripcion_Categoria.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Descripcion_Categoria}}
+    </div>
+        
+    <div style="margin-top: 40px; ">
+        <button type="submit" style="margin-left: 450px;  background: rgb(36, 210, 253);">Guardar</button>
+    </div> 
+
+</form>
+{% endblock %}  
+

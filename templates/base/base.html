@@ -1,0 +1,58 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="es-spanish">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ <!-- XDSoft DateTimePicker -->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />  
+
+
+
+    <title>{% block title %} Document {% endblock %}</title>
+</head>
+<body>
+    {% block header %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand"style="color: blanchedalmond;" >Sistema de Reportes</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8000/admin/dashboard/">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+
+
+        </ul>
+          <label for="" style="color: blanchedalmond; font-size: 20px;">KONTROOL</label>
+      </div>
+    </nav>
+  
+    {% endblock %}
+
+    {% block contenido %}
+    <h5> bloque contenido</h5>
+    {% endblock %}
+
+    {% block footer %}
+    
+    {% endblock %}
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>  
+  <script>
+    $(document).ready(function () {
+      jQuery.datetimepicker.setLocale('es');
+    });
+  </script>
+{% block js_page %} {% endblock %}
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+{% extends 'base/base.html' %}
+{% block title %}
+Producto
+{% endblock %}
+
+{% block contenido %}
+
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{hidden}}
+    {% endfor %}
+
+    <div class="form-group">
+        <label for="{{ form.Id_Producto.id_for_label }}"
+                class="col-sm-2 control-label">{{ form.Id_Producto.label }}</label>
+        </div class="col-sm-8">
+            {{ form.Id_Producto }}
+        </div>        
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Nombre_Producto.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Nombre_Producto}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Precio_Venta.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Precio_Venta}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Precio_Compra.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Precio_Compra}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Marca.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Marca}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Categoria.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Categoria}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Garantia.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Garantia}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Existencia.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Existencia}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Existencia_Minima.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Existencia_Minima}}
+    </div>
+        
+    <div style="margin-top: 40px; ">
+        <button type="submit" style="margin-left: 450px;  background: rgb(36, 210, 253);">Guardar</button>
+    </div> 
+
+</form>
+{% endblock %}  
+
+

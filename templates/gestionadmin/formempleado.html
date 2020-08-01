@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Empleado
+{% endblock %}
+
+{% block contenido %}
+
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{hidden}}
+    {% endfor %}
+
+    <div class="form-group">
+        <label for="{{ form.Id_Empleado.id_for_label }}"
+                class="col-sm-2 control-label">{{ form.Id_Empleado.label }}</label>
+        </div class="col-sm-8">
+            {{ form.Id_Empleado }}
+        </div>        
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Empleado.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Empleado}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Turno.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Turno}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Planilla.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Planilla}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Nombre_Empleado.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Nombre_Empleado}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Direccion_Empleado.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Direccion_Empleado}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ Telefono_Empleado.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Telefono_Empleado}}
+    </div>
+
+
+    
+        
+    <div style="margin-top: 40px; ">
+        <button type="submit" style="margin-left: 450px;  background: rgb(36, 210, 253);">Guardar</button>
+    </div> 
+
+</form>
+{% endblock %}  
+
+

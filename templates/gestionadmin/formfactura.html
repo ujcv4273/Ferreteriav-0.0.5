@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Factura
+{% endblock %}
+
+{% block contenido %}
+
+
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{hidden}}
+    {% endfor %}
+
+    <div class="form-group">
+        <label for="{{ form.Id_Factura.id_for_label }}"
+                class="col-sm-2 control-label">{{ form.Id_Factura.label }}</label>
+        </div class="col-sm-8">
+            {{ form.Id_Factura }}
+        </div>        
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Empleado.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Empleado}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_Cliente.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_Cliente}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_MetodoPago.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_MetodoPago}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_FormaPago.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_FormaPago}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Numero_Sar.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Numero_Sar}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Id_producto.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Id_producto}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Fecha.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Fecha}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Codigo_CAI.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Codigo_CAI}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.ISV18.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.ISV18}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.ISV15.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.ISV15}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Total_Factura.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Total_Factura}}
+    </div>
+        
+    <div style="margin-top: 40px; ">
+        <button type="submit" style="margin-left: 450px;  background: rgb(36, 210, 253);">Guardar</button>
+    </div> 
+
+</form>
+{% endblock %}  
+
+

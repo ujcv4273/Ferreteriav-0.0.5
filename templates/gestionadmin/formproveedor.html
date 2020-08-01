@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Proveedor
+{% endblock %}
+
+{% block contenido %}
+
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{hidden}}
+    {% endfor %}
+
+    <div class="form-group">
+        <label for="{{ form.Id_Proveedor.id_for_label }}"
+                class="col-sm-2 control-label">{{ form.Id_Proveedor.label }}</label>
+        </div class="col-sm-8">
+            {{ form.Id_Proveedor }}
+        </div>        
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Nombre_Proveedor.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Nombre_Proveedor}}
+    </div>
+
+
+    <label style="margin-left: 400px;">
+        {{ form.Correo_Proveedor.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Correo_Proveedor}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Direccion_Proveedor.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Direccion_Proveedor}}
+    </div>
+
+    <label style="margin-left: 400px;">
+        {{ form.Telefono_Proveedor.label }}
+    </label> <br>
+    <div style="width: 200px; margin-left: 400px;">
+        {{ form.Telefono_Proveedor}}
+    </div>
+        
+    <div style="margin-top: 40px; ">
+        <button type="submit" style="margin-left: 450px;  background: rgb(36, 210, 253);">Guardar</button>
+    </div> 
+
+</form>
+{% endblock %}  
